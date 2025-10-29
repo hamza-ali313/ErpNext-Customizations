@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Form Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        background-image: url(./assets/dgtx_theme/Images/blur.jpeg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        overflow: hidden;
+      }
+      img.mainlogo {
+        width: 75%;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+      }
+      ul li {
+        list-style: none;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        position: absolute;
+        max-width: 1000px;
+        height: 530px;
+        margin: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .myCard {
+        position: relative;
+        background: #fff;
+        height: 100%;
+        border-radius: 25px;
+        -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+        -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+        box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+      }
+
+      .row {
+        height: 100%;
+      }
+
+      .login-sec {
+        background-image: url("../assets/dgtx_theme/Images/blursq.jpeg");
+        background-position: left;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 25px;
+        height: 100%;
+        position: relative;
+      }
+
+      .myRightCtn {
+        background-image: url("../assets/dgtx_theme/Images/greenbg.jpeg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        border-radius: 25px;
+        height: 100%;
+      }
+
+      .cont {
+        position: absolute;
+        bottom: 62px;
+        left: 50px;
+        font-weight: 700;
+      }
+
+      .social {
+        position: absolute;
+        bottom: 30px;
+        width: 360px;
+        left: 50px;
+        display: flex;
+        align-items: center;
+        gap: 23px;
+        justify-content: center;
+      }
+
+      ul.social i {
+        font-size: 33px;
+      }
+      ul.social img {
+        width: 33px;
+      }
+
+      ul.social li {
+        border: 2px solid #fff;
+        width: 100%;
+        padding: 1px 0;
+        text-align: center;
+        border-radius: 12px;
+      }
+
+      p.apprv {
+        position: absolute;
+        top: 75%;
+        left: 40px;
+        color: #000;
+        font-weight: 500;
+        margin: 0;
+        font-size: 15px;
+      }
+      img.loginimg {
+        width: 150px;
+        position: relative;
+        top: 23px;
+        left: 40px;
+      }
+
+      img.star {
+        width: 100%;
+        padding: 60px 10px 0;
+        object-fit: contain;
+      }
+
+      ul.tob-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 40px;
+      }
+
+      ul.tob-bar img {
+        width: 130px;
+      }
+
+      .contact-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 10px 20px;
+        color: #000;
+        font-size: 14px;
+        flex-wrap: wrap;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+      }
+
+      .contact-item span {
+        font-size: 21px;
+        font-weight: 600;
+        color: #000;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: bold;
+      }
+
+      .contact-item i {
+        font-size: 16px;
+      }
+
+      /* login Section start  */
+      #login-container,
+      #forgot-container {
+        width: 320px;
+        padding: 40px 30px;
+        border-radius: 12px;
+        margin: 0 auto;
+      }
+
+      .input-group {
+        position: relative;
+        margin-bottom: 20px;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 12px 40px;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        background-color: #f9fafb;
+        font-size: 14px;
+        outline: none;
+        transition: border 0.2s ease;
+      }
+
+      .input-group input:focus {
+        border-color: #4a9b68;
+        background-color: #fff;
+      }
+
+      .input-group i {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        color: #a0aec0;
+        font-size: 16px;
+      }
+
+      .show-toggle {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #4a9b68;
+        font-size: 13px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .forgot {
+        text-align: right;
+        font-size: 13px;
+        margin-bottom: 20px;
+      }
+
+      .forgot a {
+        color: #2b6cb0;
+        text-decoration: none;
+      }
+
+      .forgot a:hover {
+        text-decoration: underline;
+      }
+
+      .btn {
+        width: 100%;
+        background-color: #357a52;
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        padding: 12px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: background 0.2s ease;
+      }
+
+      .btn:hover {
+        background-color: #2f6546;
+      }
+      /* Hide forgot password container initially */
+      #forgot-container {
+        display: none;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 20px;
+        color: #111;
+      }
+      /* login Section end */
+
+      @media only screen and (max-width: 376px) {
+        .myRightCtn {
+          display: none;
+        }
+        .contact-item span {
+          font-size: 16px;
+        }
+        img.loginimg {
+          width: 110px;
+        }
+        ul.tob-bar img {
+          width: 70px;
+        }
+        #login-container,
+        #forgot-container {
+          padding: 20px 10px;
+        }
+        .myCard {
+          height: 80%;
+          margin: 40px 0 0 0;
+        }
+      }
+      @media only screen and (max-width: 575px) {
+        .myRightCtn {
+          display: none;
+        }
+      }
+      @media only screen and (max-width: 768px) {
+        .social {
+          left: 17px;
+        }
+      }
+      @media only screen and (max-width: 992px) {
+      }
+      @media only screen and (max-width: 1200px) {
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul class="tob-bar">
+      <li><img src="./assets/dgtx_theme/Images/golden.png" alt="" /></li>
+      <li><img src="./assets/dgtx_theme/Images/green.png" alt="" /></li>
+    </ul>
+    <div class="container">
+      <div class="myCard">
+        <div class="row login-sec">
+          <div class="col-md-6 p-0" style="height: 100%">
+            <div>
+              <img
+                src="./assets/dgtx_theme/Images/login.png"
+                alt=""
+                class="loginimg"
+              />
+              <form onsubmit="return loginUser(event)" id="login-container">
+                <!-- LOGIN FORM -->
+                <div>
+                  <div class="input-group">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input
+                      type="email"
+                      placeholder="jane@example.com"
+                      id="email"
+                    />
+                  </div>
+
+                  <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" placeholder="" />
+                    <span class="show-toggle" onclick="togglePassword()"
+                      >Show</span
+                    >
+                  </div>
+
+                  <div class="forgot">
+                    <a href="#" onclick="showForgot()">Forgot Password?</a>
+                  </div>
+
+                  <button class="btn">Login</button>
+                </div>
+              </form>
+              <form
+                id="forgot-container"
+                onsubmit="return resetPassword(event)"
+              >
+                <!-- FORGOT PASSWORD FORM -->
+                <div>
+                  <h2>Forgot Password</h2>
+                  <div class="input-group">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="Email Address" />
+                  </div>
+
+                  <button class="btn">Reset Password</button>
+
+                  <div class="text-center">
+                    <a href="#" onclick="showLogin()">Back to Login</a>
+                  </div>
+                </div>
+              </form>
+              <p class="apprv">Approved Tax Agency By:</p>
+              <a href="">
+                <img
+                  src="https://tax.gov.ae/en/images/header/logo-fta.png"
+                  class="mainlogo"
+                  title="FTA"
+                  alt="FTA"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 p-0" style="height: 100%">
+            <div class="myRightCtn">
+              <img
+                src="./assets/dgtx_theme/Images/ab.png"
+                alt=""
+                class="star"
+              />
+              <p class="apprv">Connect with us</p>
+              <ul class="social">
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/dgtxuae"
+                    target="_blank"
+                  >
+                    <!--<i class="fa-brands fa-linkedin"></i>-->
+                    <img src="./assets/dgtx_theme/Images/linkedin.jpeg" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/dgtx.uae" target="_blank">
+                    <!--<i class="fa-brands fa-instagram"></i>-->
+                    <img src="./assets/dgtx_theme/Images/instagram-icon.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/dgtx.uae" target="_blank">
+                    <!--<i class="fa-brands fa-facebook"></i>-->
+                    <img src="./assets/dgtx_theme/Images/facebook-icon.png" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/@DgTxTaxConsultancy"
+                    style="color: red"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-bar">
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <span>600550007</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Dubai, Sharjah & Abu Dhabi</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-globe"></i>
+        <a href="https://www.dgtx.ae" target="_blank">
+          <span>www.dgtx.ae</span>
+        </a>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:care@dgtx.ae">
+          <span>care@dgtx.ae</span>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      function togglePassword() {
+        const pwd = document.getElementById("password");
+        const toggle = document.querySelector(".show-toggle");
+        if (pwd.type === "password") {
+          pwd.type = "text";
+          toggle.textContent = "Hide";
+        } else {
+          pwd.type = "password";
+          toggle.textContent = "Show";
+        }
+      }
+
+      function showForgot() {
+        document.getElementById("login-container").style.display = "none";
+        document.getElementById("forgot-container").style.display = "block";
+      }
+
+      function showLogin() {
+        document.getElementById("forgot-container").style.display = "none";
+        document.getElementById("login-container").style.display = "block";
+      }
+    </script>
+
+    <script>
+      async function loginUser(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        try {
+          const response = await fetch("/api/method/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({ usr: email, pwd: password }),
+          });
+
+          const data = await response.json();
+
+          if (response.ok && data.message === "Logged In") {
+            // ✅ Redirect to ERPNext desk or custom home
+            window.location.href = "/app";
+          } else {
+            alert(data.message || "Login failed!");
+          }
+        } catch (err) {
+          alert("Something went wrong: " + err);
+        }
+      }
+    </script>
+    <script>
+      async function resetPassword(event) {
+        event.preventDefault();
+        const email = document.querySelector(
+          "#forgot-container input[type=email]"
+        ).value;
+
+        try {
+          const res = await fetch(
+            "/api/method/frappe.core.doctype.user.user.reset_password",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ user: email }),
+            }
+          );
+
+          const data = await res.json();
+          if (res.ok) {
+            alert("Password reset email sent successfully!");
+            showLogin();
+          } else {
+            alert(data.message || "Error sending reset email");
+          }
+        } catch (e) {
+          alert("Error: " + e);
+        }
+      }
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
